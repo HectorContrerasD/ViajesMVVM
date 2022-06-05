@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ViajesMVVM.MainPage">
 
-    <Label Text="Prueba de git"></Label>
+    <Label Text="Prueba edición de git"></Label>
 
 </ContentPage>
