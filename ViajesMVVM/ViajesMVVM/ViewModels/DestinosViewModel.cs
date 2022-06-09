@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Input;
 using ViajesMVVM.Models;
 using Xamarin.Forms;
+using ViajesMVVM.Views;
 
 namespace ViajesMVVM.ViewModels
 {
@@ -17,7 +18,7 @@ namespace ViajesMVVM.ViewModels
         public ICommand CambiarVistaCommand { get; set; }
         public ICommand AgregarCommand { get; set; }
         public ICommand EliminarCommand { get; set; }
-        public ICommand DetallesCommand  { get; set; }
+        public ICommand DetallesCommand { get; set; }
         public ICommand EditarCommand { get; set; }
         public ICommand GuardarCommand { get; set; }
 
@@ -30,6 +31,11 @@ namespace ViajesMVVM.ViewModels
             EditarCommand = new Command<Destinos>(Editar);
             GuardarCommand = new Command(GuardarDatos);
         }
+
+        AgregarDestinoView agregarDestino;
+        DetallesViajeView detallesViaje;
+        EditarDestinoView editarDestino;
+
         int indice;
         private void ValidarDatos()
         {
@@ -42,8 +48,8 @@ namespace ViajesMVVM.ViewModels
                 Error = "Agregue una descripción de su destino";
             }
             if (string.IsNullOrWhiteSpace(DestinoViaje.Ciudad))
-            { 
-                Error ="Agregue la ciudad de su destino";
+            {
+                Error = "Agregue la ciudad de su destino";
             }
             if (string.IsNullOrWhiteSpace(DestinoViaje.Pais))
             {
@@ -64,7 +70,17 @@ namespace ViajesMVVM.ViewModels
         }
         private void GuardarDatos(object obj)
         {
-            throw new NotImplementedException();
+            if (DestinoViaje != null)
+            {
+                Error = "";
+                ValidarDatos();
+                if (string.IsNullOrWhiteSpace(Error))
+                {
+                    Viajes[indice] = DestinoViaje;
+                    App.Current.MainPage.Navigation.PopToRootAsync();
+                }
+                PropertyChange();
+            }
         }
 
         private void Editar(Destinos obj)
@@ -77,6 +93,7 @@ namespace ViajesMVVM.ViewModels
             throw new NotImplementedException();
         }
 
+
         private void Eliminar(Destinos obj)
         {
             throw new NotImplementedException();
@@ -84,12 +101,30 @@ namespace ViajesMVVM.ViewModels
 
         private void Agregar(object obj)
         {
-            throw new NotImplementedException();
+            if (DestinoViaje != null)
+            {
+                Error = "";
+                ValidarDatos();
+                if (string.IsNullOrWhiteSpace(Error))
+                {
+                    Viajes.Add(DestinoViaje);
+                    CambiarVista("Ver");
+                }
+            }
+            PropertyChange();
         }
 
-        private void CambiarVista(string obj)
+        private void CambiarVista(string vista)
         {
-           
+          if(vista =="Agregar")
+            {
+                Error = "";
+                DestinoViaje = new Destinos();
+            }
+        }
+        private void PropertyChange()
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(""));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
