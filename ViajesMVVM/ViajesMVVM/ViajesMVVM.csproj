@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Views\DetallesViajeView.xaml.cs">
       <DependentUpon>DetallesViajeView.xaml</DependentUpon>
     </Compile>
