@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViajesMVVM.Views.MenuView"
+             Title="Elija su destino">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="botonagregar.png"  ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+            <ScrollView.Background>
+                <LinearGradientBrush StartPoint="1,0">
+                    <GradientStop Color="DodgerBlue" Offset="0.5"></GradientStop>
+                    <GradientStop Color="White" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </ScrollView.Background>
+            <StackLayout>
+                
+                <Frame CornerRadius="25" Margin="30,10" >
+                    <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="TextColor" Value="Black" ></Setter>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                            <RowDefinition Height=".5*" ></RowDefinition>
+                        <RowDefinition Height=".1*"></RowDefinition>
+                        <RowDefinition Height=".1*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                        <Image Source="https://www.eleconomista.com.mx/__export/1618979762812/sites/eleconomista/img/2021/04/20/cancun_hoteles.jpg_2118499843.jpg"></Image>
+                        <Label Grid.Row="1" Text="Playas del carmen"></Label>
+                        <Frame Grid.Row="2" Margin="-5" CornerRadius="5" BorderColor="Black">
+                            <Label HorizontalTextAlignment="Center" TextColor="Green" Text=" $10000" ></Label>
+                        </Frame>
+                        <Label Grid.Row="3" Padding="10" HorizontalTextAlignment="End" Text="México"></Label>
+                    </Grid>
+                    
+                </Frame>
+            <Frame CornerRadius="25" Margin="30,10" >
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="TextColor" Value="Black" ></Setter>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*" ></RowDefinition>
+                        <RowDefinition Height=".1*"></RowDefinition>
+                        <RowDefinition Height=".1*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="https://oasishoteles.com/blog/wp-content/uploads/2021/05/atardecer-piramide.jpg"></Image>
+                    <Label Grid.Row="1" Text="Playas del carmen"></Label>
+                    <Frame Grid.Row="2" Margin="-5" CornerRadius="5" BorderColor="Black">
+                        <Label HorizontalTextAlignment="Center" TextColor="Green" Text=" $10000" ></Label>
+                    </Frame>
+                    <Label Grid.Row="3" Padding="10" HorizontalTextAlignment="End" Text="México"></Label>
+                </Grid>
+
+            </Frame>
+        </StackLayout>
+           
+           <!-- <CollectionView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                            <Image Source="http://res.cloudinary.com/simpleview/image/upload/v1579627824/clients/quintanaroo/3V5A8075_1_85da526b-2013-4aac-9398-a7255144db14.jpg"></Image>
+                            <Label></Label>
+                            </Grid>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView> -->
+        </ScrollView>
+    
+</ContentPage>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViajesMVVM.Views.EditarDestinoView"
+             Title="Editar destino">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="1,0">
+            <GradientStop Color="DodgerBlue" Offset="0.5"></GradientStop>
+            <GradientStop Color="White" Offset="1"></GradientStop>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="comprobar.png"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout Margin="0,10">
+            
+            <StackLayout.Resources>
+                <Style TargetType="Frame">
+                    <Setter Property="Margin" Value="10,5"></Setter>
+                    <Setter Property="CornerRadius" Value="25"></Setter>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="TextColor" Value="black"></Setter>
+                </Style>
+                <Style TargetType="Entry">
+                    <Setter Property="TextColor" Value="Black"></Setter>
+                </Style>
+            </StackLayout.Resources>
+            <Label Text="Error" FontSize="Default" TextColor="Gold" FontAttributes="Bold" TextDecorations="Underline" HorizontalTextAlignment="Center"></Label>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue el nombre del destino:"  ></Label>
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue el país del destino:"></Label>
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue la ciudad del destino:"></Label>
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue una descripción corta del destino:"></Label>
+                    <Editor TextColor="Black"></Editor>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue un presupuesto recomendado:"></Label>
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue una imágen de referencia del destino:"></Label>
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue una vista aérea del destino:"></Label>
+                    <Entry></Entry>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

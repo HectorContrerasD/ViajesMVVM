@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ViajesMVVM.Views;
 
 namespace ViajesMVVM
 {
@@ -10,7 +11,7 @@ namespace ViajesMVVM
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage (new DetallesViajeView());
         }
 
         protected override void OnStart()
